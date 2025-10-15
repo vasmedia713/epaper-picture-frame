@@ -1,0 +1,51 @@
+[Unit]
+# Service description
+Description=E-Paper Picture Frame
+Documentation=https://github.com/YOUR_USERNAME/epaper-picture-frame
+
+# Wait for network to be available (needed for cloud sync, uploads)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Service type
+Type=simple
+
+# Run as the 'pi' user
+User=pi
+Group=pi
+
+# Working directory
+WorkingDirectory=/home/pi/epaper-picture-frame
+
+# Environment variables
+Environment="PYTHONPATH=/home/pi/epaper-picture-frame"
+Environment="PYTHONUNBUFFERED=1"
+
+# The command to run
+ExecStart=/usr/bin/python3 -m src.picture_frame config/frame_config.yaml
+
+# Restart policy
+# always = restart if it crashes or exits
+Restart=always
+
+# Wait 10 seconds before restarting (prevents restart loops)
+RestartSec=10
+
+# Standard output to systemd journal
+StandardOutput=journal
+StandardError=journal
+
+# Kill timeout (how long to wait before force-killing)
+TimeoutStopSec=30
+
+# Nice level (priority) - 0 is normal, higher = lower priority
+Nice=0
+
+# Resource limits (optional - uncomment if needed)
+# LimitNOFILE=1024
+# MemoryLimit=256M
+
+[Install]
+# Start on boot (multi-user.target = normal system boot)
+WantedBy=multi-user.target
