@@ -1,35 +1,33 @@
 # Core Dependencies
-# These are required for the picture frame to function
-
-# Image processing library - handles loading, resizing, and converting images
+# Image processing library
 Pillow>=10.0.0
-
-# Waveshare e-paper display driver
-# Note: Must be installed with --break-system-packages flag on Pi
-waveshare-epd>=1.0.0
 
 # YAML configuration file parser
 PyYAML>=6.0.0
 
-# Environment variable management from .env files
+# Environment variable management
 python-dotenv>=1.0.0
+
+# NOTE: waveshare-epd is installed separately via install.sh
+# It comes from GitHub, not PyPI
+# Installation command:
+# pip3 install git+https://github.com/waveshare/e-Paper.git#subdirectory=RaspberryPi_JetsonNano/python
 
 # ============================================
 # Development Dependencies (Optional)
-# Only needed if you're developing/testing
 # ============================================
 
 # Testing framework
 pytest>=7.4.0
 
-# Code formatter - makes code look consistent
+# Code formatter
 black>=23.0.0
 
-# Code quality checker - finds bugs and style issues
+# Code quality checker
 pylint>=2.17.0
 
 # Test coverage reporting
 pytest-cov>=4.1.0
 
-# Type checking (optional but recommended)
+# Type checking
 mypy>=1.0.0
