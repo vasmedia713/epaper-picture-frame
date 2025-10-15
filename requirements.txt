@@ -1,0 +1,35 @@
+# Core Dependencies
+# These are required for the picture frame to function
+
+# Image processing library - handles loading, resizing, and converting images
+Pillow>=10.0.0
+
+# Waveshare e-paper display driver
+# Note: Must be installed with --break-system-packages flag on Pi
+waveshare-epd>=1.0.0
+
+# YAML configuration file parser
+PyYAML>=6.0.0
+
+# Environment variable management from .env files
+python-dotenv>=1.0.0
+
+# ============================================
+# Development Dependencies (Optional)
+# Only needed if you're developing/testing
+# ============================================
+
+# Testing framework
+pytest>=7.4.0
+
+# Code formatter - makes code look consistent
+black>=23.0.0
+
+# Code quality checker - finds bugs and style issues
+pylint>=2.17.0
+
+# Test coverage reporting
+pytest-cov>=4.1.0
+
+# Type checking (optional but recommended)
+mypy>=1.0.0
