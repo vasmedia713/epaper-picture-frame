@@ -8,7 +8,7 @@ from typing import Optional
 from PIL import Image
 
 try:
-    from waveshare_epd import epd2in13_V2
+    from waveshare_epd import epd2in13_V4
     DISPLAY_AVAILABLE = True
 except ImportError:
     DISPLAY_AVAILABLE = False
@@ -18,7 +18,7 @@ except ImportError:
 class DisplayController:
     """Controls the e-paper display hardware"""
     
-    def __init__(self, width: int = 250, height: int = 122):
+    def __init__(self, width: int = 122, height: int = 250):
         """
         Initialize display controller for Rev 2.1
         
@@ -44,9 +44,9 @@ class DisplayController:
             return False
         
         try:
-            self.epd = epd2in13_V2.EPD()
+            self.epd = epd2in13_V4.EPD()
             # Rev 2.1 uses init(0) for full update
-            self.epd.init(0)
+            self.epd.init()
             self.epd.Clear(0xFF)
             self.logger.info(f"Display initialized: {self.width}x{self.height}")
             return True
@@ -77,7 +77,7 @@ class DisplayController:
         try:
             if full_refresh:
                 self.logger.info("Performing full refresh")
-                self.epd.init(0)
+                self.epd.init()
                 self.epd.Clear(0xFF)
             
             self.epd.display(self.epd.getbuffer(image))
@@ -102,7 +102,7 @@ class DisplayController:
         """Clear display to white"""
         if DISPLAY_AVAILABLE and self.epd:
             try:
-                self.epd.init(0)
+                self.epd.init()
                 self.epd.Clear(0xFF)
                 self.logger.info("Display cleared")
             except Exception as e:
