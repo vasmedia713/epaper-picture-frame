@@ -1,7 +1,7 @@
 [Unit]
 # Service description
 Description=E-Paper Picture Frame
-Documentation=https://github.com/YOUR_USERNAME/epaper-picture-frame
+Documentation=https://github.com/vasmedia713/epaper-picture-frame
 
 # Wait for network to be available (needed for cloud sync, uploads)
 After=network-online.target

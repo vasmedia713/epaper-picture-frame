@@ -113,7 +113,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 
-Project Link: [https://github.com/vasmedia713/epaper-picture-frame](https://github.com/YOUR_USERNAME/epaper-picture-frame)
+Project Link: [https://github.com/vasmedia713/epaper-picture-frame](https://github.com/vasmedia713/epaper-picture-frame)
 
 ---
 
